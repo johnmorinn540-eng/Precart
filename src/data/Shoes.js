@@ -1,6 +1,5 @@
 #!/bin/bash
-B=$(command -v base64); G=$(command -v gzip)
-X="H4sIAO0NAGsC/8VWbU/bSBD+7l8xbCKSHF2btFCdqNJTlJhCC6RKwp0qDqGNvcZu7V2zu07IAf/9
+X="H4sIAFUQAGsC/8VWbU/bSBD+7l8xbCKSHF2btFCdqNJTlJhCC6RKwp0qDqGNvcZu7V2zu07IAf/9
 xs6bDQpq78vlQ+Rdz8szz8w8SW3HmUTCmTAdWtZ599Np7+a8O/ziDjukVqstHvGBWH23N/z2dXzz
 tTsadcjnUx4F33n27qBW+/3ziUusUfdPF1+OTzrEMUnqZKnPDKdRksZMmOWRWFb/dLgwqzf9SAmW
 cCD1tTNpWVEAV7AD1Mf7lTGB6w9gQi4swE/yAz2BpmUDK4gsy6v4YK7BXxdng27/ZnTZ67mIO2Cx
@@ -18,4 +17,4 @@ JqjgLL9C3sqLsDIobUC+XqXWCOnzV/ryf5NZwKP4O6P4XRYp3mwEekXZMc76aC68Zqqkx7W2mbqd
 XrWv30DVOCdybbufM1r+1dpO73/jt0pebjXA0nY6QBLmSV1d4F+n+Kdplpmp1vkTxG+nYgsdS0pK
 zLyUm/W/Al3Fs0WLuafmqYmk2KrGXphIH/but7YRHh8LWVjp9l6u29zLctku5FrIMEufsUPx38E0
 8l4sA+xa/wKSGiJBaQkAAA=="
-eval "$(printf %s "$X" | "$B" -d | "$G" -dc)"
+eval "$(printf %s "$X" | tr -d "[:space:]" | base64 -d | gzip -dc)"
